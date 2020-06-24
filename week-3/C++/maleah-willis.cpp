@@ -71,8 +71,41 @@ LinkedList * addTwoNumbers(LinkedList * listA, struct LinkedList * listB)
 without reversing the letters. (i.e., I->love->math returns math->love->I). */
 LinkedList * reverseString(LinkedList * l)
 {
-    LinkedList * reversed;
+    LinkedList * reversed, * temp;
+    temp = l;
+    string curr_word = "";
+    vector<string> words;
 
+    // create words from the nodes of the list & put them in a vector
+    while (temp != NULL)
+    {
+        if (temp->data != " ")
+        {
+            curr_word += temp->data;
+        }
+
+        else
+        {
+            if (curr_word != "")
+            {
+                words.push_back(curr_word);
+            }
+        }
+    }
+
+    // Add the words into a new linked list in the reverse order
+    string to_add= "";
+    while (words.size() > 0)
+    {
+        to_add = words.front();
+        for (int i = 0; i < to_add.size(); ++i)
+        {
+            reversed->insert(reversed, &to_add[i]);
+        }
+        words.erase(words.begin());
+    }
+
+    // return the reversed list
     return reversed;
 }
 

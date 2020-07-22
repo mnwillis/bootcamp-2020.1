@@ -90,10 +90,10 @@ int main()
 	    cin >> n;
 
 	    // a vector to hold the list of numbers given
-	    vector<int> numbers;
+	    vector<long> numbers;
 	    for (int i = 0; i < n; ++i)
 	    {
-		    int add;
+		    long add;
 		    cin >> add;
 		    numbers.push_back(add);
 	    }
@@ -101,7 +101,7 @@ int main()
 	    cin >> k;
 
 	    // variables to hold the current smallest and counter for the amount of times repeated
-	    int curr_smallest, counter; 
+	    long curr_smallest, counter; 
 	    counter = 0;
 	    curr_smallest = 100002; // we set it to some max value so our first value that works will obviously be less
 
@@ -127,7 +127,7 @@ int main()
 		    }
 	    }
 
-	    if (curr_smallest != -1) cout << curr_smallest;
+	    cout << curr_smallest;
 
     }
 
